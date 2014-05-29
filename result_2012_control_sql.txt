@@ -1,0 +1,5 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE Control (Nstates int, Threshold double, NStatesInPlay int, BaseA int,BaseB int);
+INSERT INTO "Control" VALUES(51,4.0,23,160,129);
+COMMIT;

@@ -1,6 +1,10 @@
 /* 
  * File:   main.cpp
- * Author: Owner
+ * Author: C. Klopfenstein
+ * 
+ * Calculate probability of candidate A winning election, (and of
+ * all possible electoral vote totals)
+ * given an SQLite input DB file of state polling data.
  *
  * Created on May 13, 2014, 8:08 PM
  */
@@ -14,9 +18,11 @@
 #include <vector>
 #include <sqlite3.h>
 
-#include "electoral.h"
+//#include "electoral.h"
+#include "electoralSQLite.h"
 
 using namespace std;
+using namespace chris;
 
 /*
  * 
@@ -36,8 +42,7 @@ int main(int argc, char** argv) {
 
 // create electoral object - ctor opens dB file, reads the data, closes the file
     
-    electoral * elect = new electoral(filestring);
-    
+    electoralSQLite * elect = new electoralSQLite();
     status = elect->getInputData(filestring);
     
 // debug
